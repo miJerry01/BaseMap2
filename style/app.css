@@ -1,0 +1,63 @@
+ 
+ 
+ html, body { 
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+         }
+
+    #map { padding: 0; }
+
+    .panel input[type="text"] { 
+      width: 300px;
+      padding: 6px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font: 13px/1.4 "Segoe UI", Arial, sans-serif;
+           }
+
+    .panel button { 
+      padding: 6px 10px;
+      margin-left: 6px;
+      border: 1px solid #bbb;
+      background: #fff;
+      border-radius: 4px;
+      cursor: pointer; 
+      font: 13px/1.4 "Segoe UI", Arial, sans-serif;
+           }
+
+    .panel button:hover { 
+    background: #f5f5f5;
+     }
+
+    .error { color: #f66;
+      font-size: 12px;
+      margin-top: 6px;
+       }
+
+    .kmz-list { 
+      margin-top: 8px;
+      font: 13px/1.4 "Segoe UI", Arial, sans-serif;
+      max-height: 160px; 
+      overflow:auto; 
+      border-top: 1px solid #eee;
+      padding-top: 6px;
+         }
+    
+    .kmz-item {
+       margin: 4px 0;
+       }
+    .kmz-item label { 
+      cursor: pointer; 
+    }
+
+    .hint { 
+      font: 12px/1.4 "Segoe UI", Arial, sans-serif; color:#444; margin-top:8px; 
+    }
+
+    .btn-on {
+       border-color:#2e7dff !important; 
+       color:#2e7dff !important;
+       }

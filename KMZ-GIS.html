@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+  <title>Basemap + Lat/Lon + KMZ + Markups</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/3.46/dijit/themes/claro/claro.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.46/esri/css/esri.css">
+
+  <link rel="stylesheet" href="style/app.css">
+
+  <script src="https://js.arcgis.com/3.46/"></script>
+
+</head>
+
+<body class="claro">
+  <div data-dojo-type="dijit/layout/BorderContainer"
+       data-dojo-props="design:'headline', gutters:false"
+       style="width:100%;height:100%;margin:0;">
+
+    <div id="map"
+         data-dojo-type="dijit/layout/ContentPane"
+         data-dojo-props="region:'center'"
+         style="padding:0;">
+
+      <!-- Basemap Gallery (top-right) -->
+      <div style="position:absolute; right:20px; border-radius: 18px; top:10px; z-index:999;">
+        <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Switch Basemap', open:true">
+          <div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
+            <div id="basemapGallery"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lat/Long Search (top-left) -->
+      <div style="position:absolute; left:20px; top:10px; z-index:999;">
+        <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Go to Lat/Long', open:true">
+          <div data-dojo-type="dijit/layout/ContentPane" class="panel" style="padding:8px; width:380px;">
+            <input id="latlon-input" type="text" />
+            <button id="latlon-go" type="button">Go</button>
+            <div id="latlon-error" class="error"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Markups (points & lines) -->
+      <div style="position:absolute; left:20px; top:120px; z-index:999;">
+        <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Markups', open:true">
+          <div data-dojo-type="dijit/layout/ContentPane" class="panel" style="padding:8px; width:380px;">
+            <button id="mk-pin"  type="button">Pin</button>
+            <button id="mk-line" type="button">Line</button>
+            <button id="mk-clear" type="button">Clear Markups</button>
+            <div class="hint">Pin: click to drop a dot. Line: click to start, click to add vertices, <b>double-click</b> to finish. Your markups persist while you pan/zoom.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KMZ Panel (bottom-left) -->
+      <div style="position:absolute; left:20px; bottom:10px; z-index:999;">
+        <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'KMZ Layers', open:true">
+          <div data-dojo-type="dijit/layout/ContentPane" class="panel" style="padding:8px; width:420px;">
+            <div>
+              <input id="kmz-url" type="text" placeholder="KMZ/KML URL or relative path (e.g., kmz/my-sites.kmz)">
+              <button id="kmz-add" type="button" onclick="require(['dojo/dom','dojo/on'], function(dom,on){ var v = dom.byId('kmz-url').value.trim(); if (v) require(['esri/layers/KMLLayer'], function(KMLLayer){ /* wired in code above */ }); });">Add KMZ</button>
+            </div>
+            <div class="hint">Or just hard-code your KMZ load in the script with <code>addKMZ <strong>('kmz/your.kmz')</strong></code>.</div>
+            <div id="kmz-error" class="error"></div>
+            <div id="kmz-list" class="kmz-list"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    <script type="module" src="scripts/mapCal.js">
+   
+  </script>
+</body>
+</html>
