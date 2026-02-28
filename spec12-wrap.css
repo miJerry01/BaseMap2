@@ -1,0 +1,121 @@
+/* ==========================================
+   SPEC-12: 10 assembly columns
+   Scope: ONLY the table inside .spec12-wrap
+========================================== */
+
+.spec12-wrap {
+  max-width: 200%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  margin-top: 200px;
+  margin-left: -15px;
+ 
+}
+
+/* Keep borders/layout, let wrapper scroll if table is wide */
+.spec12-wrap table {
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--clr--blue_dark);
+
+  width: max-content;   /* table can exceed container width */
+  max-width: 200%;
+  margin: 0;
+  line-height: .9;     /* tighter rows */
+}
+
+.spec12-wrap th,
+.spec12-wrap td {
+  border: 1px solid var(--clr--blue_dark);
+  font-size: clamp(0.62rem, 0.35rem + 0.9cqw, 0.78rem);
+
+  /* tighter rows */
+  line-height: 1.1;
+  padding-block: clamp(0.08rem, 0.05rem + 0.25cqw, 0.22rem);
+  padding-inline: clamp(0.18rem, 0.12rem + 0.35cqw, 0.45rem);
+
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.spec12-wrap th {
+  background-color: var(--clr--gray_ivory);
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  font-weight: 900;
+}
+
+/* Header row a touch tighter */
+.spec12-wrap thead th {
+  padding-block: clamp(0.10rem, 0.06rem + 0.25cqw, 0.26rem);
+}
+
+/* Stop long descriptions from making rows tall */
+.spec12-wrap td[class^="description-name-"] {
+  white-space: nowrap;      /* keeps rows short */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 48ch;
+}
+
+/* Column sizing */
+.spec12-wrap th.item-header,
+.spec12-wrap td[class^="item-grid-"] {
+  width: 4ch;
+  text-align: center;
+}
+
+.spec12-wrap th.assembly-header {
+  text-align: center;
+}
+
+/* 10 assembly header cells (.1 ... .10) */
+.spec12-wrap thead tr:nth-child(2) th {
+  width: 3ch;
+  text-align: center;
+}
+
+/* Description column clamp */
+.spec12-wrap th.description,
+.spec12-wrap td[class^="description-name-"] {
+  white-space: normal;  /* allow wrap if you want; keeps header nicer */
+  text-align: left;
+  min-width: 22ch;
+  max-width: 48ch;
+}
+
+/* Part number column */
+.spec12-wrap th.part-number,
+.spec12-wrap td[class^="part-number-"] {
+  width: 14ch;
+  text-align: center;
+}
+
+/* Optional: sticky header */
+@supports (position: sticky) {
+  .spec12-wrap thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+/* Extra tightening for small screens */
+@media (max-width: 650px) {
+  .spec12-wrap {
+    padding: 0.15rem;
+  }
+
+  .spec12-wrap th,
+  .spec12-wrap td {
+    padding: 0.2rem 0.35rem;
+  }
+
+  .spec12-wrap th.description,
+  .spec12-wrap td[class^="description-name-"] {
+    min-width: 18ch;
+    max-width: 34ch;
+  }
+}
