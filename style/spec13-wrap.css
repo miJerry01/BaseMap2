@@ -1,0 +1,120 @@
+/* ==========================================
+   SPEC-13: 15 assembly columns
+   File: spec13-wrap.css
+   Scope: ONLY the table inside .spec13-wrap
+========================================== */
+
+.spec13-wrap {
+  max-width: 260%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  margin-top: 200px;
+  margin-left: -15px;
+}
+
+/* Keep borders/layout, let wrapper scroll if table is wide */
+.spec13-wrap table {
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--clr--blue_dark);
+
+  width: max-content; /* table can exceed container width */
+  max-width: 260%;
+  margin: 0;
+  line-height: 0.9; /* tighter rows */
+}
+
+.spec13-wrap th,
+.spec13-wrap td {
+  border: 1px solid var(--clr--blue_dark);
+  font-size: clamp(0.62rem, 0.35rem + 0.9cqw, 0.78rem);
+
+  line-height: 1.1;
+  padding-block: clamp(0.08rem, 0.05rem + 0.25cqw, 0.22rem);
+  padding-inline: clamp(0.18rem, 0.12rem + 0.35cqw, 0.45rem);
+
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.spec13-wrap th {
+  background-color: var(--clr--gray_ivory);
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  font-weight: 900;
+}
+
+/* Header row a touch tighter */
+.spec13-wrap thead th {
+  padding-block: clamp(0.10rem, 0.06rem + 0.25cqw, 0.26rem);
+}
+
+/* Stop long descriptions from making rows tall */
+.spec13-wrap td[class^="description-name-"] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 48ch;
+}
+
+/* Column sizing */
+.spec13-wrap th.item-header,
+.spec13-wrap td[class^="item-grid-"] {
+  width: 4ch;
+  text-align: center;
+}
+
+.spec13-wrap th.assembly-header {
+  text-align: center;
+}
+
+/* 15 assembly header cells (.1 ... .15) */
+.spec13-wrap thead tr:nth-child(2) th {
+  width: 3ch;
+  text-align: center;
+}
+
+/* Description column clamp */
+.spec13-wrap th.description,
+.spec13-wrap td[class^="description-name-"] {
+  white-space: normal;
+  text-align: left;
+  min-width: 22ch;
+  max-width: 48ch;
+}
+
+/* Part number column */
+.spec13-wrap th.part-number,
+.spec13-wrap td[class^="part-number-"] {
+  width: 14ch;
+  text-align: center;
+}
+
+/* Optional: sticky header */
+@supports (position: sticky) {
+  .spec13-wrap thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+/* Extra tightening for small screens */
+@media (max-width: 650px) {
+  .spec13-wrap {
+    padding: 0.15rem;
+  }
+
+  .spec13-wrap th,
+  .spec13-wrap td {
+    padding: 0.2rem 0.35rem;
+  }
+
+  .spec13-wrap th.description,
+  .spec13-wrap td[class^="description-name-"] {
+    min-width: 18ch;
+    max-width: 34ch;
+  }
+}
