@@ -29,6 +29,8 @@ body {
     "header  header  header  header"
     "sidebar box-0   box-0   box-0"
     "sidebar box-1   box-1   box-1"
+    "sidebar box-2   box-2   box-2"
+    "sidebar box-3   box-3   box-3"
     "footer  footer  footer  footer";
   gap: 1rem;
   min-height: 100vh;
@@ -43,6 +45,8 @@ body {
 .sidebar             { grid-area: sidebar; }
 .main-content-box-0  { grid-area: box-0; }
 .main-content-box-1  { grid-area: box-1; }
+.main-content-box-2  { grid-area: box-2; }
+.main-content-box-3  { grid-area: box-3; }
 .footer              { grid-area: footer; }
 
 /* =========================
@@ -278,6 +282,9 @@ p + p {
   transition: transform 160ms ease;
 }
 
+.parts-dropdown {
+  /* desktop default = open (so your list shows normally) */
+}
 
 /* ✅ MOBILE behavior */
 @media (max-width: 649px) {
@@ -347,7 +354,9 @@ p + p {
    MAIN BOX FLEX LAYOUT
 ========================= */
 .main-content-box-0,
-.main-content-box-1 {
+.main-content-box-1,
+.main-content-box-2,
+.main-content-box-3 {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -356,7 +365,9 @@ p + p {
 
 /* full-width description row */
 .main-content-box-0 > .assembly-description,
-.main-content-box-1 > .assembly-description2 {
+.main-content-box-1 > .assembly-description2,
+.main-content-box-2 > .assembly-description3,
+.main-content-box-3 > .assembly-description4  {
   flex: 0 0 100%;
 }
 
@@ -364,7 +375,11 @@ p + p {
 .main-content-box-0 > .house-1,
 .main-content-box-0 > .house-2,
 .main-content-box-1 > .house-3,
-.main-content-box-1 > .house-4 {
+.main-content-box-1 > .house-4,
+.main-content-box-2 > .house-5,
+.main-content-box-2 > .house-6,
+.main-content-box-3 > .house-7,
+.main-content-box-3 > .house-8  {
   flex: 1 1 0;
   max-width: none;
   min-width: 280px;
@@ -389,9 +404,29 @@ p + p {
   margin-top: 150px;
 }
 
+.assembly-description3 {
+  width: 100%;
+  text-align: center;
+  font-size: 200%;
+  margin: 0.25rem auto 0.75rem;
+  margin-top: 100px;
+}
+
+.assembly-description4 {
+  width: 100%;
+  text-align: center;
+  font-size: 200%;
+  margin: 0.25rem auto 0.75rem;
+  margin-top: 150px;
+}
+
 .assembly-icon-1,
 .assembly-icon-2,
-.assembly-icon-3 {
+.assembly-icon-3,
+.assembly-icon-4,
+.assembly-icon-5,
+.assembly-icon-6
+ {
   display: block;
   height: auto;
   max-width: 100%;
@@ -405,16 +440,24 @@ p + p {
 }
 
 .assembly-icon-2 {
-  margin-left: 100px;
+  margin-left: 70px;
   margin-top: 210px;
-  width: 180%;
-  max-width: 1000px;
+  width: 170%;
+  max-width: 800px;
 }
 
 .assembly-icon-3 {
   margin-left: 100px;
   width: 140%;
   max-width: 1000px;
+}
+
+
+.assembly-icon-4 {
+  margin-top: 150px;
+  margin-left: 80px;
+  width: 110%;
+  max-width: 700px;
 }
 
 .spec11-wrap {
@@ -500,7 +543,11 @@ p + p {
 .house-1_room-1,
 .house-2_room-2,
 .house-3_room-3,
-.house-4_room-4 {
+.house-4_room-4,
+.house-5_room-5,
+.house-6_room-6,
+.house-7_room-7,
+.house-8_room-8  {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -513,6 +560,11 @@ p + p {
 .house-2 { margin-top: -200px; }
 .house-3 { margin-top: -100px; }
 .house-4 { margin-top: -100px; }
+.house-5 { margin-top: -100px; }
+.house-6 { margin-top: -200px; }
+.house-7 { margin-top: -120px; }
+.house-8 { margin-top: -80px; }
+
 
 /* =========================
    TRAINING SUMMARY
@@ -636,6 +688,8 @@ p + p {
       "sidebar sidebar sidebar sidebar"
       "box-0 box-0   box-0   box-0"
       "box-1 box-1   box-1   box-1"
+      "box-2 box-2   box-2   box-2"
+      "box-3 box-3   box-3   box-3"
       "footer  footer  footer  footer";
   }
 }
@@ -652,6 +706,8 @@ p + p {
       "header  header  header  header"
       "sidebar box-0   box-0   box-0"
       "sidebar box-1   box-1   box-1"
+      "sidebar box-2   box-2   box-2"
+      "sidebar box-3   box-3   box-3"
       "footer  footer  footer  footer";
   }
 
@@ -664,7 +720,9 @@ p + p {
    CONTAINER QUERIES
 ========================= */
 .main-content-box-0,
-.main-content-box-1 {
+.main-content-box-1,
+.main-content-box-2,
+.main-content-box-3  {
   container-type: inline-size;
   container-name: content;
 }
@@ -678,7 +736,11 @@ p + p {
   .house-1,
   .house-2,
   .house-3,
-  .house-4 {
+  .house-4,
+  .house-5,
+  .house-6,
+  .house-7,
+  .house-8 {
     display: flex;
     flex-direction: column;
     gap: 1rem;
