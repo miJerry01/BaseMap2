@@ -1,0 +1,228 @@
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   PAGE LAYOUT (GRID)
+========================= */
+body {
+  font-family: "SF Pro Text", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #101010;
+
+  padding: 2rem 3rem;
+  margin-inline: auto;
+  max-inline-size: 1500px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  /* header | content | footer */
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header  header  header"
+    "box-0   box-0   box-0   box-0"
+    "footer  footer  footer  footer";
+
+  gap: 1rem;
+  min-height: 100vh;
+}
+
+/* =========================
+   GRID AREAS
+========================= */
+.page-spec-title { grid-area: header; }
+.main-content-box-0 { grid-area: box-0; }
+.footer { grid-area: footer; }
+
+/* =========================
+   SHARED PANEL STYLES
+========================= */
+.page-spec-title,
+.footer {
+  border: 1px solid var(--clr--blue_lite);
+  padding: 1rem 1.5rem;
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
+.page-spec-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr--blue_dark);
+}
+
+.site-nav-toggle {
+  font-size: 1.75rem;
+  line-height: 1;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.site-nav {
+  display: none;
+  justify-content: flex-end;
+  gap: 1.25rem;
+}
+
+.site-nav.is-open { display: flex; }
+
+.site-nav a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr--blue_dark);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav-toggle:hover {
+  color: var(--clr-gray70);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content-box-0 {
+  display: flex;
+  flex-direction: column;     /* keep title above row */
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+/* =========================
+   H1 CENTERED
+========================= */
+.assembly-description {
+  text-align: center;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  margin-block: 0.25rem 0.75rem;
+}
+
+/* =========================
+   3 ICONS IN A ROW
+   (Requires wrapping HTML in .image-row)
+========================= */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+  flex-wrap: wrap;              /* wraps on small screens */
+  width: 100%;
+}
+
+/* each slot */
+.image-row .house-1,
+.image-row .house-2,
+.image-row .house-3 {
+  flex: 1 1 260px;              /* allows 3-across when space permits */
+  max-width: 420px;             /* prevents stretching too wide */
+  display: flex;
+}
+
+/* center content inside each slot */
+.image-row .house-1_room-1,
+.image-row .house-2_room-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+
+  border: 1px solid var(--clr--blue_lite);
+  border-radius: 12px;
+  background: transparent;
+}
+
+/* =========================
+   ICON SIZING (content1 + content2)
+   - safe for SVG icons and images
+========================= */
+.content1,
+.content2 {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: min(100%, 340px);      /* keeps icons sane on desktop */
+  margin-inline: auto;
+  transform-origin: center;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+/* =========================
+   PDF VIEWER
+========================= */
+.pdf-viewer {
+  width: min(100%, 1100px);
+  height: min(80vh, 900px);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* =========================
+   MOBILE TUNING
+========================= */
+@media (width <= 480px) {
+  body {
+    padding: 1.25rem 1rem;
+  }
+
+  /* stack cleanly on small phones */
+  .image-row {
+    gap: 1rem;
+  }
+
+  .image-row .house-1,
+  .image-row .house-2,
+  .image-row .house-3 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .content1,
+  .content2 {
+    width: min(100%, 420px);
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 72px;
+}
+
+.footer h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--clr--blue_dark);
+}
+
+/* =========================
+   RESPONSIVE (MEDIA)
+========================= */
+@media (width >= 650px) {
+  .site-nav-toggle { display: none; }
+  .site-nav { display: flex; }
+}
