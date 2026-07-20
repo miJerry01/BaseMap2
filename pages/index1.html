@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Spec-B101 [Electric Standard Template]</title>
+
+  <link rel="stylesheet" href="../style/general1.css" />
+  <link rel="stylesheet" href="../style/spec11-wrap.css">
+  <link rel="stylesheet" href="../style/spec12-wrap.css">
+  <link rel="stylesheet" href="../style/spec13-wrap.css">
+
+  <!-- Google model-viewer for the Page 8 GLB model -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+<nav class="top-page-nav" aria-label="Page navigation">
+  <a class="home-tab" href="../index.html">Home Page</a>
+</nav>
+
+
+<button class="print-btn" onclick="window.print()">PRINT / PDF</button>
+
+<!-- PAGE 10 -->
+<main class="page page10">
+  <section class="house-100 model-page-content">
+    <header class="model-page-header">
+      <div class="model-page-mini-text">
+        <strong>USE:</strong> TRENCHING<br>
+        AND CONDUIT
+      </div>
+
+      <h1>
+        TRENCHING, CONDUIT AND EQUIPMENT PLACEMENT<br>
+        UNDERGROUND DISTRIBUTION
+      </h1>
+    </header>
+
+    <div class="model-viewer-wrap">
+      <model-viewer
+  id="poleViewer"
+  class="pole-model-viewer"
+  src="../image/Dis-Assem-Part-1.glb"
+  alt="Interactive 3D underground distribution model on page 10"
+  camera-controls
+  touch-action="pan-y"
+  auto-rotate
+  auto-rotate-delay="1500"
+  rotation-per-second="18deg"
+  shadow-intensity="1"
+  shadow-softness="0.8"
+  exposure="1"
+  environment-image="neutral"
+  interaction-prompt="auto"
+  loading="eager"
+  reveal="auto">
+</model-viewer>
+
+<button
+  id="rotationToggle"
+  type="button"
+  class="model-rotation-btn"
+  aria-pressed="false"
+  aria-label="Pause model rotation">
+  ❚❚ Pause Rotation
+</button>
+    </div>
+
+    <article class="model-page-text-section">
+      <h2>NOTES:</h2>
+      <ol>
+        <li>All dimensions are in inches unless otherwise noted.</li>
+        <li>Refer to applicable construction standards for installation requirements.</li>
+        <li>Verify all equipment locations prior to installation.</li>
+        <li>Coordinate field conditions before construction begins.</li>
+        <li>Contact Engineering for clarification of any discrepancies.</li>
+      </ol>
+    </article>
+  </section>
+
+  <footer class="house-100-footer">
+    <div class="house-100-wrap" id="house100-container"></div>
+  </footer>
+</main>
+<script>
+/* =========================
+   PAGE 3 TABLE DATA
+========================= */
+
+const tableData = [
+  [1,"EYE, NUT",3,1,3,3,1,"AP-0040"],
+  [2,"DEADEND CLAMP STRAIN",3,1,3,3,"","AP-0033"],
+  [3,"CLEVIS SECONDARY NEUTRAL","",1,1,"",1,"AP-0032"],
+  [4,"BRACKET, CROSS-ARM",1,"",2,"",2,"AP-0081"],
+  [5,"CUTOUT, POLYMER W/ 100A",2,3,"",1,"","AP-0060"],
+  [6,"INSULATOR, PIN, VISE TOP","",1,3,3,4,"AP-0070"],
+  [7,"INSULATOR, 15KV",3,"",3,3,"","AP-0500"],
+  [8,"TRANSFORMER",3,1,3,3,4,"AP-0080"],
+  [9,"EYE, NUT",4,3,4,"",3,"AP-0040"],
+  [10,"DEADEND CLAMP STRAIN","",3,"",12,3,"AP-0033"],
+  [11,"CLEVIS SECONDARY NEUTRAL",1,2,4,2,"","AP-0032"],
+  [12,"BRACKET, CROSS-ARM","","","",1,"","AP-0081"],
+  [13,"CUTOUT, POLYMER W/ 100A",1,1,1,"",2,"AP-0060"],
+  [14,"INSULATOR, PIN, VISE TOP",1,3,1,1,"","AP-0070"],
+  [15,"INSULATOR, 15KV",1,3,"",2,"","AP-0500"],
+  [16,"TRANSFORMER",4,3,4,4,3,"AP-0080"],
+  [17,"INSULATOR, PIN, VISE TOP",1,3,1,1,"","AP-0070"],
+  [18,"INSULATOR, PIN, VISE TOP",1,3,1,1,"","AP-0070"],
+  [19,"INSULATOR, PIN, VISE TOP",1,3,1,1,"","AP-0070"],
+  [20,"INSULATOR, 15KV",1,3,"",2,"","AP-0500"],
+  [21,"TRANSFORMER",4,3,4,4,3,"AP-0080"],
+  [22,"INSULATOR, PIN, VISE TOP",1,3,1,1,"","AP-0070"],
+  [23,"INSULATOR, PIN, VISE TOP",1,3,1,1,"","AP-0070"],
+  [24,"BRACKET, CROSS-ARM",1,"",2,"",2,"AP-0081"],
+  [25,"CUTOUT, POLYMER W/ 100A",2,3,"",1,"","AP-0060"],
+  [26,"INSULATOR, PIN, VISE TOP","",1,3,3,4,"AP-0070"],
+  [27,"INSULATOR, 15KV",3,"",3,3,"","AP-0500"],
+  [28,"TRANSFORMER",3,1,3,3,4,"AP-0080"],
+  [29,"EYE, NUT",4,3,4,"",3,"AP-0040"],
+  [30,"DEADEND CLAMP STRAIN","",3,"",12,3,"AP-0033"],
+  [31,"CLEVIS SECONDARY NEUTRAL",1,2,4,2,"","AP-0032"]
+];
+
+
+/* =========================
+   FOOTER DATA
+========================= */
+
+
+const house100Data = {
+  main: '<img src="../image/Logo3.svg" alt="EDGE Logo" class="footer-logo">',
+ initiatedBy: "INITIATED BY",
+ narrow: ["EON", "12-23"],
+  revisionLabels: ["REVISION No.", "STANDARDS", "REVISED BY"],
+  revisionValues: ["1", "07-20", "IEA"],
+  bottomLeft: "STANDARDS",
+  end: "AC-A100 <br> Pg. 3 OF 5"
+};
+
+/* =========================
+   BUILD FOOTERS
+========================= */
+
+function buildFooterTable(data, tableClass) {
+  return `
+    <table class="${tableClass}">
+      <tbody>
+        <tr>
+          <td class="cell-main" rowspan="3">${data.main}</td>
+
+          <td class="cell-two-top" rowspan="2">
+            ${data.initiatedBy}
+          </td>
+
+          <td class="cell-narrow" rowspan="3">
+            <div class="cell-narrow-inner">
+              <div>${data.narrow[0]}</div>
+              <div>${data.narrow[1]}</div>
+            </div>
+          </td>
+
+          <td class="cell-three-1">${data.revisionLabels[0]}</td>
+          <td class="cell-three-narrow-1">${data.revisionValues[0]}</td>
+
+          <td class="cell-end" rowspan="3">${data.end}</td>
+        </tr>
+
+        <tr>
+          <td class="cell-three-2">${data.revisionLabels[1]}</td>
+          <td class="cell-three-narrow-2">${data.revisionValues[1]}</td>
+        </tr>
+
+        <tr>
+          <td class="cell-two-bottom">${data.bottomLeft}</td>
+          <td class="cell-three-3">${data.revisionLabels[2]}</td>
+          <td class="cell-three-narrow-3">${data.revisionValues[2]}</td>
+        </tr>
+      </tbody>
+    </table>
+  `;
+}
+
+
+
+document.getElementById("house100-container").innerHTML =
+  buildFooterTable(house100Data, "house-100-table");
+
+  /* =========================
+   PAGE 8 MODEL ROTATION
+========================= */
+
+const poleViewer = document.getElementById("poleViewer");
+const rotationToggle = document.getElementById("rotationToggle");
+
+rotationToggle.addEventListener("click", function () {
+
+  const rotationIsActive = poleViewer.hasAttribute("auto-rotate");
+
+  if (rotationIsActive) {
+    poleViewer.removeAttribute("auto-rotate");
+
+    rotationToggle.innerHTML = "▶ Play Rotation";
+    rotationToggle.setAttribute("aria-label", "Play model rotation");
+    rotationToggle.setAttribute("aria-pressed", "true");
+    rotationToggle.classList.add("rotation-paused");
+
+  } else {
+    poleViewer.setAttribute("auto-rotate", "");
+
+    rotationToggle.innerHTML = "❚❚ Pause Rotation";
+    rotationToggle.setAttribute("aria-label", "Pause model rotation");
+    rotationToggle.setAttribute("aria-pressed", "false");
+    rotationToggle.classList.remove("rotation-paused");
+  }
+
+});
+
+
+
+</script>
+
+</body>
+</html>

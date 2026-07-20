@@ -1,0 +1,2018 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --page-bg: #ffffff;
+  --footer-bg: #ffffff;
+  --line-primary: #cfcdcd;
+  --line-neutral: #4b4b4b;
+  --line-light: #d9d9d9;
+  --text-primary: #000000;
+  --text-inverse: #ffffff;
+  --clr--blue_dark: #4b4b4b;
+  --clr--gray_ivory: #f2f2f2;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  gap: 0.5in;
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+/* =========================
+   PAGE BASE
+========================= */
+
+.page {
+  width: 8.5in;
+  height: 11in;
+  padding: 0.35in 0.32in 0.32in;
+  display: grid;
+  grid-template-rows: 1fr 0.62in;
+  gap: 0;
+  overflow: hidden;
+  background: var(--page-bg);
+  border: 2px solid var(--line-primary);
+}
+/* Main Page button - same appearance as Home */
+
+.main-page-btn {
+  margin-top: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5.5rem;
+    min-height: 2.5rem;
+    padding: 0.65rem 1.1rem;
+    border: 1px solid #4b4b4b;
+    border-radius: 0.45rem;
+    background: #ffffff;
+    color: #000000;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 0.2rem 0.7rem rgba(0,0,0,.18);
+    transition:
+        transform 160ms ease,
+        background-color 160ms ease,
+        color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.main-page-btn:hover,
+.main-page-btn:focus-visible {
+    background: #4b4b4b;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 0.3rem 0.9rem rgba(0,0,0,.25);
+}
+
+/* =========================
+   PAGE 1
+========================= */
+
+.page1 {
+  page-break-after: always;
+}
+
+.house-10 {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  padding: 0.15in;
+  background: #ffffff;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  column-gap: 0.25in;
+  row-gap: 0.10in;
+}
+
+.page1-header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.25in 1fr;
+  align-items: start;
+  padding: 0.05in 0.10in 0;
+}
+
+.page1-mini-text {
+  font-size: 0.68rem;
+  line-height: 1.15;
+  font-weight: 900;
+  text-align: left;
+}
+
+.page1-header h1 {
+  font-size: 0.92rem;
+  line-height: 1.18;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.02rem;
+}
+
+.house-A-inner,
+.house-B-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 5.8in;
+  padding: 0.10rem;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.house-A-inner > img,
+.house-B-inner > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.page1-text-section {
+  grid-column: 1 / -1;
+  padding: 0.05in 0.15in 0.10in;
+  color: #000000;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.page1-text-section h2 {
+  margin-bottom: 0.05in;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.page1-text-section ol {
+  margin-left: 0.25in;
+  padding-left: 0;
+}
+
+.page1-text-section li {
+  margin-bottom: 0.04in;
+  font-size: 0.62rem;
+  line-height: 1.15;
+}
+
+.page1-text-section li::marker {
+  font-size: 0.62rem;
+}
+
+/* =========================
+   PAGE 2
+========================= */
+
+.page2 {
+  page-break-after: always;
+}
+
+.house-20 {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35in;
+  padding: 0.35in 0.32in 0.22in;
+  overflow: visible;
+}
+
+.house-A1-inner {
+  position: relative;
+  width: 100.5%;
+  height: 100.5%;
+  padding: 0.35rem;
+  overflow: visible;
+  background: var(--page-bg);
+  z-index: 100;
+}
+
+.house-A1-main-img {
+  position: absolute;
+  top: 0.35rem;
+  left: 0.35rem;
+  display: block;
+  width: 170%;
+  height: 170%;
+  max-width: none;
+  max-height: none;
+  margin-top: -20px;
+  object-fit: contain;
+  object-position: left top;
+  z-index: 1;
+}
+
+.house-A1-2-inner {
+  position: absolute;
+  top: 52%;
+  left: 5%;
+  width: 185%;
+  height: 45%;
+  overflow: visible;
+  z-index: 10;
+}
+
+.house-A1-2-img {
+  display: block;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  max-width: none;
+  max-height: none;
+  margin-top: -60px;
+  object-fit: contain;
+  object-position: left center;
+  z-index: 101;
+}
+
+.house-B1-inner {
+  position: relative;
+  width: 85%;
+  height: 85%;
+  margin-top: 150px;
+  padding: 0.35rem;
+  overflow: visible;
+  background: var(--page-bg);
+  z-index: 1;
+}
+
+.house-B1-inner > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-left: 40px;
+  object-fit: contain;
+  object-position: right;
+}
+
+/* =========================
+   PAGE 3 TABLE
+========================= */
+
+.page3 {
+  page-break-after: always;
+}
+
+.house-30 {
+  padding: 0.25in;
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+}
+
+.house-A3-inner {
+  width: 150%;
+  height: 150%;
+  margin-top: 200px;
+  margin-left: -29px;
+  padding: 0.15rem;
+  overflow: auto;
+  background: #ffffff;
+}
+
+.house-A3-inner.spec11-wrap {
+  max-width: 110%;
+  max-height: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.house-A3-inner.spec11-wrap table {
+  width: 150%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  line-height: 1.1;
+  background: #ffffff;
+  border: 1px solid var(--line-neutral);
+}
+
+.house-A3-inner.spec11-wrap th,
+.house-A3-inner.spec11-wrap td {
+  padding: 0.08rem 0.15rem;
+  border: 1px solid var(--line-neutral);
+  font-size: 0.8rem;
+  line-height: 1.1;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.house-A3-inner.spec11-wrap th {
+  background: var(--clr--gray_ivory);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+}
+
+.house-A3-inner.spec11-wrap .item-header {
+  width: 7%;
+}
+
+.house-A3-inner.spec11-wrap .description {
+  width: 38%;
+  text-align: left;
+}
+
+.house-A3-inner.spec11-wrap .assembly-header {
+  text-align: center;
+}
+
+.house-A3-inner.spec11-wrap thead tr:nth-child(2) th {
+  width: 7%;
+}
+
+.house-A3-inner.spec11-wrap .part-number {
+  width: 18%;
+}
+
+/* =========================
+   PAGE 4
+========================= */
+
+.page4 {
+  page-break-after: always;
+}
+
+.house-40 {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  padding: 0.01in;
+}
+
+.page4-header {
+  display: grid;
+  grid-template-columns: 1.25in 1fr;
+  align-items: start;
+  margin-bottom: 0.15in;
+  padding: 0.10in 0.15in 0;
+}
+
+.page4-mini-text {
+  font-size: 0.68rem;
+  line-height: 1.15;
+  font-weight: 900;
+  text-align: left;
+}
+
+.page4-header h1 {
+  font-size: 0.92rem;
+  line-height: 1.18;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.02rem;
+}
+
+.house-A4-inner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 5.6in;
+  margin-top: 0.10in;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: auto;
+  background: #ffffff;
+}
+
+.house-A4-inner.spec12-wrap {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0.15rem;
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.house-A4-inner.spec12-wrap table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  line-height: 1;
+  background: #ffffff;
+  border: 1px solid var(--line-neutral);
+}
+
+.house-A4-inner.spec12-wrap th,
+.house-A4-inner.spec12-wrap td {
+  padding: 0.04rem 0.05rem;
+  border: 1px solid var(--line-neutral);
+  font-size: 0.70rem;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.house-A4-inner.spec12-wrap th {
+  background: var(--clr--gray_ivory);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02rem;
+}
+
+.house-A4-inner.spec12-wrap .item-header,
+.house-A4-inner.spec12-wrap td:first-child {
+  width: 7%;
+}
+
+.house-A4-inner.spec12-wrap .description,
+.house-A4-inner.spec12-wrap .description-cell,
+.house-A4-inner.spec12-wrap td:nth-child(2) {
+  width: 30%;
+  max-width: 30%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.house-A4-inner.spec12-wrap .assembly-header {
+  width: 50%;
+  text-align: center;
+}
+
+.house-A4-inner.spec12-wrap thead tr:nth-child(2) th,
+.house-A4-inner.spec12-wrap td:nth-child(n+3):nth-child(-n+12) {
+  width: 3.6ch;
+  min-width: 2.2ch;
+  max-width: 4.2ch;
+  padding-left: 0.02rem;
+  padding-right: 0.02rem;
+}
+
+.house-A4-inner.spec12-wrap .part-number,
+.house-A4-inner.spec12-wrap td:last-child {
+  width: 12%;
+}
+
+.page4-text-section {
+  margin-top: 0.10in;
+  padding: 0 0.15in 0.10in;
+  color: #000000;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.page4-text-section h2 {
+  margin-bottom: 0.05in;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.page4-text-section ol {
+  margin-left: 0.25in;
+  padding-left: 0;
+}
+
+.page4-text-section li {
+  margin-bottom: 0.04in;
+  font-size: 0.62rem;
+  line-height: 1.15;
+}
+
+.page4-text-section li::marker {
+  font-size: 0.62rem;
+}
+
+/* =========================
+   PAGE 5
+========================= */
+
+.page5 {
+  page-break-after: always;
+}
+
+.house-50 {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  padding: 0.20in;
+}
+
+.house-A5-inner,
+.house-A6-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.house-A5-inner img,
+.house-A6-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.pullbox-text-section {
+  width: 100%;
+  height: 100%;
+  padding: 0.15in 0.22in;
+  overflow: hidden;
+  background: #ffffff;
+  color: #000000;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.pullbox-text-section h1 {
+  margin-bottom: 0.18in;
+  font-size: 0.88rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.pullbox-text-section h2 {
+  margin: 0.08in 0;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.pullbox-text-section ol {
+  margin-left: 0.28in;
+  padding-left: 0;
+}
+
+.pullbox-text-section li {
+  margin-bottom: 0.065in;
+  padding-left: 0.12in;
+  font-size: 0.66rem;
+  line-height: 1.22;
+}
+
+.pullbox-text-section li::marker {
+  font-size: 0.66rem;
+}
+
+/* =========================
+   PAGE 6
+========================= */
+
+.page6 {
+  page-break-after: always;
+}
+
+.house-60 {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  padding: 0.20in;
+}
+
+.page6-text-section {
+  width: 100%;
+  height: 100%;
+  padding: 0.12in 0.22in;
+  overflow: hidden;
+  background: #ffffff;
+  color: #000000;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.page6-header {
+  display: grid;
+  grid-template-columns: 1.25in 1fr;
+  align-items: start;
+  margin-bottom: 0.55in;
+}
+
+.page6-mini-text {
+  font-size: 0.68rem;
+  line-height: 1.15;
+  font-weight: 900;
+  text-align: left;
+}
+
+.page6-header h1 {
+  font-size: 0.92rem;
+  line-height: 1.18;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.02rem;
+}
+
+.page6-text-section h2 {
+  margin-bottom: 0.08in;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.page6-text-section ol {
+  margin-left: 0.30in;
+  padding-left: 0;
+}
+
+.page6-text-section li {
+  margin-bottom: 0.055in;
+  padding-left: 0.12in;
+  font-size: 0.65rem;
+  line-height: 1.18;
+}
+
+.page6-text-section li::marker {
+  font-size: 0.65rem;
+}
+
+/* =========================
+   PAGE 7
+========================= */
+
+.page7 {
+  page-break-after: always;
+}
+
+.house-70 {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+}
+
+.house-A7-inner {
+  position: relative;
+  width: 140%;
+  height: 145%;
+  overflow: auto;
+  background: #ffffff;
+}
+
+.spec13-wrap {
+  position: relative;
+  top: -100px;
+  left: 11px;
+}
+
+.spec13-wrap table {
+  width: max-content;
+  max-width: 110%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  line-height: 1;
+  background: #ffffff;
+  border: 1px solid var(--clr--blue_dark);
+}
+
+.spec13-wrap th,
+.spec13-wrap td {
+  padding: 0.04rem 0.05rem;
+  border: 1px solid var(--clr--blue_dark);
+  font-size: 0.70rem;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.spec13-wrap th {
+  background: var(--clr--gray_ivory);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02rem;
+}
+
+.house-A7-inner.spec13-wrap .item-header {
+  width: 7%;
+}
+
+.house-A7-inner.spec13-wrap .description {
+  text-align: left;
+}
+
+.house-A7-inner.spec13-wrap .assembly-header {
+  width: 10%;
+  text-align: center;
+}
+
+.house-A7-inner.spec13-wrap thead tr:nth-child(2) th {
+  width: 2.2ch;
+}
+
+.house-A7-inner.spec13-wrap .part-number {
+  width: 12%;
+}
+
+.house-A7-inner.spec13-wrap table {
+  table-layout: fixed;
+}
+
+.house-A7-inner.spec13-wrap td:nth-child(n+3):nth-child(-n+17) {
+  width: 2.2ch;
+  min-width: 2.2ch;
+  max-width: 2.2ch;
+  padding-left: 0.02rem;
+  padding-right: 0.02rem;
+}
+
+.house-A7-inner.spec13-wrap thead tr:nth-child(2) th {
+  width: 3.6ch;
+  min-width: 2.2ch;
+  max-width: 4.2ch;
+  padding-left: 0.02rem;
+  padding-right: 0.02rem;
+}
+
+/* ==========================================
+   PAGE 8
+========================================== */
+
+.page8 {
+  page-break-after: always;
+}
+
+.house-80 {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  padding: 0.15in;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 0.10in;
+}
+
+.page8-header {
+  display: grid;
+  grid-template-columns: 1.25in 1fr;
+  align-items: start;
+  width: 100%;
+  padding: 0.05in 0.10in 0;
+}
+
+.page8-mini-text {
+  font-size: 0.68rem;
+  line-height: 1.15;
+  font-weight: 900;
+  text-align: left;
+}
+
+.page8-header h1 {
+  padding-right: 1.25in;
+  font-size: 0.92rem;
+  line-height: 1.18;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.02rem;
+}
+
+.house-A8-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 6.4in;
+  padding: 0.10rem;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.house-A8-inner model-viewer,
+.house-A8-inner .pole-model-viewer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 6.4in;
+  border: 0;
+  outline: 0;
+   /* */
+ background: #f1f1f3;
+  --poster-color: #ffffff;
+  --progress-bar-color: var(--line-neutral);
+  --progress-bar-height: 3px;
+}
+
+.house-A8-inner model-viewer:focus-visible {
+  outline: 2px solid var(--line-neutral);
+  outline-offset: -2px;
+}
+
+.page8-text-section {
+  width: 100%;
+  padding: 0.05in 0.15in 0.10in;
+  overflow: hidden;
+  background: #ffffff;
+  color: #000000;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.page8-text-section h2 {
+  margin-bottom: 0.05in;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.page8-text-section ol {
+  margin-left: 0.25in;
+  padding-left: 0;
+}
+
+.page8-text-section li {
+  margin-bottom: 0.04in;
+  padding-left: 0.06in;
+  font-size: 0.62rem;
+  line-height: 1.15;
+}
+
+.page8-text-section li::marker {
+  font-size: 0.62rem;
+}
+
+/* ==========================================
+   PAGE 8 MODEL-VIEWER ROTATION BUTTON
+========================================== */
+
+.house-A8-inner {
+  position: relative;
+}
+
+.model-rotation-btn {
+  position: absolute;
+right: 15px;
+bottom: 15px;
+left: auto;
+transform: none;
+
+  min-width: 105px;
+  padding: 10px 16px;
+
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+
+  background: rgba(0, 48, 84, 0.9);
+  color: #ffffff;
+
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+
+  cursor: pointer;
+  z-index: 10;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.model-rotation-btn:hover {
+  background: rgba(0, 73, 126, 1);
+}
+
+.model-rotation-btn:focus-visible {
+  outline: 3px solid #ffcc00;
+  outline-offset: 3px;
+}
+
+.model-rotation-btn.rotation-paused {
+  background: rgba(45, 45, 45, 0.9);
+}
+
+@media (max-width: 749px) {
+  .model-rotation-btn {
+    bottom: 10px;
+    min-width: 140px;
+    padding: 8px 12px;
+    font-size: 0.72rem;
+  }
+}
+
+@media print {
+  .model-rotation-btn {
+    display: none;
+  }
+}
+
+/* ==========================================
+   PAGE 9
+========================================== */
+
+.page9 {
+  page-break-after: always;
+}
+
+.house-90 {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  padding: 0.15in;
+  background: #ffffff;
+}
+
+.house-90-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.house-90-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.page9 {
+  page-break-after: always;
+}
+
+.house-90 {
+  min-height: 0;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  padding: 0.15in;
+  background: #ffffff;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  row-gap: 0.10in;
+}
+
+/* ---------- Header ---------- */
+
+.page9-header {
+  display: grid;
+  grid-template-columns: 1.25in 1fr;
+  align-items: start;
+  width: 100%;
+  padding: 0.05in 0.10in 0;
+}
+
+.page9-mini-text {
+  font-size: 0.68rem;
+  line-height: 1.15;
+  font-weight: 900;
+  text-align: left;
+}
+
+.page9-header h1 {
+  font-size: 0.92rem;
+  line-height: 1.18;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.02rem;
+}
+
+/* ---------- Drawing ---------- */
+
+.house-90-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 6.5in;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.house-90-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ==========================================
+   PAGE 10 — INTERACTIVE 3D MODEL
+========================================== */
+
+.page10 {
+  page-break-after: auto;
+}
+
+.house-100 {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0.15in;
+  overflow: hidden;
+  border-top: 2.5px solid var(--line-neutral);
+  border-left: 2.5px solid var(--line-neutral);
+  border-right: 2.5px solid var(--line-neutral);
+  background: #ffffff;
+}
+
+.model-page-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  row-gap: 0.10in;
+}
+
+.model-page-header {
+  display: grid;
+  grid-template-columns: 1.25in minmax(0, 1fr);
+  align-items: start;
+  width: 100%;
+  padding: 0.05in 0.10in 0;
+}
+
+.model-page-mini-text {
+  font-size: 0.68rem;
+  line-height: 1.15;
+  font-weight: 900;
+  text-align: left;
+}
+
+.model-page-header h1 {
+  padding-right: 1.25in;
+  font-size: 0.92rem;
+  line-height: 1.18;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.02rem;
+}
+
+.model-viewer-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 6.2in;
+  overflow: hidden;
+  background: #f1f1f3;
+}
+
+.model-viewer-wrap model-viewer,
+.model-viewer-wrap .pole-model-viewer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 6.2in;
+  border: 0;
+  outline: 0;
+  background: #f1f1f3;
+  --poster-color: #ffffff;
+  --progress-bar-color: var(--line-neutral);
+  --progress-bar-height: 3px;
+}
+
+.model-viewer-wrap model-viewer:focus-visible {
+  outline: 2px solid var(--line-neutral);
+  outline-offset: -2px;
+}
+
+.model-page-text-section {
+  width: 100%;
+  padding: 0.05in 0.15in 0.10in;
+  overflow: hidden;
+  background: #ffffff;
+  color: #000000;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.model-page-text-section h2 {
+  margin-bottom: 0.05in;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.model-page-text-section ol {
+  margin-left: 0.25in;
+  padding-left: 0;
+}
+
+.model-page-text-section li {
+  margin-bottom: 0.04in;
+  padding-left: 0.06in;
+  font-size: 0.62rem;
+  line-height: 1.15;
+}
+
+.model-page-text-section li::marker {
+  font-size: 0.62rem;
+}
+
+/* =========================
+   SHARED TABLE CELLS
+========================= */
+
+.description-cell {
+  padding-left: 8px !important;
+  overflow: hidden;
+  text-align: left !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================
+   PRINT BUTTON
+========================= */
+
+.print-btn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  padding: 4px 10px;
+  border: 1px solid var(--line-neutral);
+  background: #ffffff;
+  color: var(--text-primary);
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.print-btn:hover {
+  background: #f3f3f3;
+}
+
+/* =========================
+   FOOTERS
+========================= */
+
+.house-2,
+.house-20-footer,
+.house-30-footer,
+.house-40-footer,
+.house-50-footer,
+.house-60-footer,
+.house-70-footer,
+.house-80-footer,
+.house-90-footer,
+.house-100-footer {
+  min-height: 0.62in;
+  display: flex;
+  background: var(--footer-bg);
+  border: 1px solid var(--line-neutral);
+}
+
+.house-2-wrap,
+.house-20-wrap,
+.house-30-wrap,
+.house-40-wrap,
+.house-50-wrap,
+.house-60-wrap,
+.house-70-wrap,
+.house-80-wrap,
+.house-90-wrap,
+.house-100-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================
+   FOOTER TABLES
+========================= */
+
+.house-2-table,
+.house-20-table,
+.house-30-table,
+.house-40-table,
+.house-50-table,
+.house-60-table,
+.house-70-table,
+.house-80-table,
+.house-90-table,
+.house-100-table {
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background: var(--footer-bg);
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.7rem;
+}
+
+.house-2-table td,
+.house-20-table td,
+.house-30-table td,
+.house-40-table td,
+.house-50-table td,
+.house-60-table td,
+.house-70-table td,
+.house-80-table td,
+.house-90-table td,
+.house-100-table td {
+  padding: 2px 4px;
+  border: 1px solid var(--line-neutral);
+  vertical-align: middle;
+}
+
+.cell-main {
+  width: 32%;
+  padding: 0.15rem 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cell-two-top,
+.cell-two-bottom {
+  width: 16%;
+  font-size: 0.7rem;
+}
+
+.cell-three-1,
+.cell-three-2,
+.cell-three-3 {
+  width: 19%;
+  font-size: 0.7rem;
+}
+
+.cell-three-narrow-1,
+.cell-three-narrow-2,
+.cell-three-narrow-3 {
+  width: 9%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cell-end {
+  width: 16%;
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.footer-logo {
+  display: block;
+  width: 50%;
+  height: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center left;
+}
+
+.cell-narrow {
+  position: relative;
+  width: 8%;
+  border-left: 1px solid var(--line-neutral);
+  border-right: 1px solid var(--line-neutral);
+}
+
+.cell-narrow-inner {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+}
+
+.cell-narrow-inner div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.cell-narrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  border-top: 1px solid var(--line-neutral);
+}
+
+/* =========================
+   RESPONSIVE VIEW
+========================= */
+
+@media screen and (max-width: 900px) {
+  body {
+    display: block;
+    padding: 0.5rem;
+    overflow-x: auto;
+  }
+
+  .page {
+    margin-bottom: -3in;
+    transform: scale(0.7);
+    transform-origin: top left;
+  }
+
+  .house-10,
+  .house-20 {
+    grid-template-columns: 1fr;
+    gap: 0.15in;
+  }
+
+  .house-A-inner,
+  .house-B-inner,
+  .house-A1-inner,
+  .house-B1-inner {
+    min-height: 4in;
+  }
+
+  .house-B1-inner {
+    width: 100%;
+    height: auto;
+    margin-top: 0.25in;
+  }
+
+  .house-B1-inner > img {
+    margin-left: 0;
+    object-position: center;
+  }
+
+  .house-80 {
+    grid-template-columns: 1fr;
+  }
+
+  .page8-header {
+    grid-template-columns: 1.10in 1fr;
+  }
+
+  .page8-header h1 {
+    padding-right: 1.10in;
+  }
+
+  .house-A8-inner {
+    min-height: 4.5in;
+  }
+
+  .house-A8-inner model-viewer,
+  .house-A8-inner .pole-model-viewer {
+    min-height: 4.5in;
+  }
+
+  .model-page-header {
+    grid-template-columns: 1.10in minmax(0, 1fr);
+  }
+
+  .model-page-header h1 {
+    padding-right: 1.10in;
+  }
+
+  .model-viewer-wrap,
+  .model-viewer-wrap model-viewer,
+  .model-viewer-wrap .pole-model-viewer {
+    min-height: 4.5in;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .page {
+    margin-bottom: -4.7in;
+    transform: scale(0.55);
+    transform-origin: top left;
+  }
+
+  .print-btn {
+    padding: 4px 8px;
+    font-size: 0.6rem;
+  }
+}
+
+/* =========================
+   PRINT SETTINGS
+========================= */
+
+@page {
+  size: Letter portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 8.5in;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: #ffffff;
+  }
+
+  body {
+    display: block;
+  }
+
+  .print-btn {
+    display: none !important;
+  }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    margin: 0;
+    padding: 0.25in;
+    display: grid;
+    grid-template-rows: 1fr 0.62in;
+    overflow: hidden;
+    break-inside: avoid;
+  }
+
+  .page1,
+  .page2,
+  .page3,
+  .page4,
+  .page5,
+  .page6,
+  .page7,
+  .page8,
+  .page9 {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page10 {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  /* PAGE 1 PRINT */
+
+  .house-10 {
+    padding: 0.12in !important;
+    overflow: hidden !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto 1fr auto !important;
+    column-gap: 0.18in !important;
+    row-gap: 0.08in !important;
+  }
+
+  .page1-header {
+    grid-column: 1 / -1 !important;
+    padding: 0.04in 0.08in 0 !important;
+  }
+
+  .page1-mini-text {
+    font-size: 0.62rem !important;
+  }
+
+  .page1-header h1 {
+    font-size: 0.82rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .house-A-inner,
+  .house-B-inner {
+    min-height: 5.6in !important;
+    overflow: hidden !important;
+  }
+
+  .house-A-inner > img,
+  .house-B-inner > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .page1-text-section {
+    grid-column: 1 / -1 !important;
+    padding: 0.04in 0.12in 0.08in !important;
+  }
+
+  .page1-text-section h2 {
+    font-size: 0.68rem !important;
+  }
+
+  .page1-text-section li {
+    font-size: 0.58rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* PAGE 2 PRINT */
+
+  .house-20 {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.15in;
+    padding: 0.20in 0.20in 0.12in;
+    overflow: hidden !important;
+  }
+
+  .house-A1-inner {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+    z-index: 10 !important;
+  }
+
+  .house-A1-main-img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: block !important;
+    width: 165% !important;
+    height: 115% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin-top: 0 !important;
+    object-fit: contain !important;
+    object-position: left top !important;
+    z-index: 1 !important;
+  }
+
+  .house-A1-2-inner {
+    position: absolute !important;
+    top: 52% !important;
+    left: 0 !important;
+    width: 165% !important;
+    height: 40% !important;
+    overflow: visible !important;
+    z-index: 5 !important;
+  }
+
+  .house-A1-2-img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+  }
+
+  .house-B1-inner {
+    position: relative !important;
+    width: 90% !important;
+    height: 70% !important;
+    margin-top: 2.5in !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+  }
+
+  .house-B1-inner > img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  /* PAGE 3 PRINT */
+
+  .house-30 {
+    padding: 0.10in !important;
+    overflow: hidden !important;
+  }
+
+  .house-A3-inner {
+    width: 130% !important;
+    height: 130% !important;
+    margin-top: 140px !important;
+    margin-left: -20px !important;
+    overflow: hidden !important;
+  }
+
+  .house-A3-inner.spec11-wrap {
+    max-width: 130% !important;
+    max-height: 130% !important;
+  }
+
+  .house-A3-inner.spec11-wrap table {
+    width: 82% !important;
+    max-width: 82% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+  }
+
+  .house-A3-inner.spec11-wrap th,
+  .house-A3-inner.spec11-wrap td {
+    padding: 0.08rem 0.15rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* PAGE 4 PRINT */
+
+  .house-40 {
+    padding: 0.10in !important;
+    overflow: hidden !important;
+  }
+
+  .house-A4-inner {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 5.6in !important;
+    margin-top: 0.08in !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .house-A4-inner.spec12-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+
+  .house-A4-inner.spec12-wrap table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+  }
+
+  .house-A4-inner.spec12-wrap th,
+  .house-A4-inner.spec12-wrap td {
+    padding: 0.04rem 0.05rem !important;
+    font-size: 0.55rem !important;
+    line-height: 1 !important;
+  }
+
+  /* PAGE 5 PRINT */
+
+  .house-50 {
+    padding: 0.10in !important;
+    overflow: hidden !important;
+  }
+
+  .pullbox-text-section {
+    padding: 0.12in 0.20in !important;
+  }
+
+  .pullbox-text-section h1 {
+    margin-bottom: 0.16in !important;
+    font-size: 0.86rem !important;
+  }
+
+  .pullbox-text-section h2 {
+    font-size: 0.76rem !important;
+  }
+
+  .pullbox-text-section li {
+    margin-bottom: 0.055in !important;
+    font-size: 0.64rem !important;
+    line-height: 1.18 !important;
+  }
+
+  /* PAGE 6 PRINT */
+
+  .house-60 {
+    padding: 0.10in !important;
+    overflow: hidden !important;
+  }
+
+  .page6-text-section {
+    padding: 0.10in 0.20in !important;
+  }
+
+  .page6-header {
+    margin-bottom: 0.48in !important;
+  }
+
+  .page6-mini-text {
+    font-size: 0.66rem !important;
+  }
+
+  .page6-header h1 {
+    font-size: 0.88rem !important;
+  }
+
+  .page6-text-section h2 {
+    font-size: 0.74rem !important;
+  }
+
+  .page6-text-section li {
+    margin-bottom: 0.05in !important;
+    font-size: 0.62rem !important;
+    line-height: 1.15 !important;
+  }
+
+  /* PAGE 7 PRINT */
+
+  .house-70 {
+    padding: 0.10in !important;
+    overflow: hidden !important;
+  }
+
+  .house-A5-inner,
+  .house-A6-inner {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .house-A7-inner {
+    width: 125% !important;
+    height: 125% !important;
+    margin-top: 90px !important;
+    margin-left: -18px !important;
+    overflow: hidden !important;
+  }
+
+  .house-A5-inner img,
+  .house-A6-inner img,
+  .house-A7-inner img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .spec13-wrap {
+    max-width: 125% !important;
+    max-height: 125% !important;
+    overflow: hidden !important;
+  }
+
+  .spec13-wrap table {
+    width: 80% !important;
+    max-width: 80% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+  }
+
+  .spec13-wrap th,
+  .spec13-wrap td {
+    padding: 0.04rem 0.06rem !important;
+    font-size: 0.55rem !important;
+    line-height: 1 !important;
+  }
+
+  /* PAGE 8 PRINT */
+
+  .house-80 {
+    padding: 0.12in !important;
+    overflow: hidden !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto 1fr auto !important;
+    row-gap: 0.08in !important;
+  }
+
+  .page8-header {
+    display: grid !important;
+    grid-template-columns: 1.25in 1fr !important;
+    align-items: start !important;
+    padding: 0.04in 0.08in 0 !important;
+  }
+
+  .page8-mini-text {
+    font-size: 0.62rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .page8-header h1 {
+    padding-right: 1.25in !important;
+    font-size: 0.82rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .house-A8-inner {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 6.2in !important;
+    overflow: hidden !important;
+  }
+
+  .house-A8-inner model-viewer,
+  .house-A8-inner .pole-model-viewer {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 6.2in !important;
+    border: 0 !important;
+    background: #ffffff !important;
+    --poster-color: #ffffff;
+  }
+
+  .page8-text-section {
+    padding: 0.04in 0.12in 0.08in !important;
+    overflow: hidden !important;
+  }
+
+  .page8-text-section h2 {
+    font-size: 0.68rem !important;
+  }
+
+  .page8-text-section li {
+    margin-bottom: 0.035in !important;
+    font-size: 0.58rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* PAGES 9 AND 10 PRINT */
+
+  .house-90,
+  .house-100 {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+  }
+
+  .house-100 {
+    padding: 0.12in !important;
+  }
+
+  .model-page-content {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto minmax(0, 1fr) auto !important;
+    row-gap: 0.08in !important;
+  }
+
+  .model-page-header {
+    display: grid !important;
+    grid-template-columns: 1.25in minmax(0, 1fr) !important;
+    align-items: start !important;
+    padding: 0.04in 0.08in 0 !important;
+  }
+
+  .model-page-mini-text {
+    font-size: 0.62rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .model-page-header h1 {
+    padding-right: 1.25in !important;
+    font-size: 0.82rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .model-viewer-wrap,
+  .model-viewer-wrap model-viewer,
+  .model-viewer-wrap .pole-model-viewer {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 6.0in !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+  }
+
+  .model-page-text-section {
+    padding: 0.04in 0.12in 0.08in !important;
+    overflow: hidden !important;
+  }
+
+  .model-page-text-section h2 {
+    font-size: 0.68rem !important;
+  }
+
+  .model-page-text-section li {
+    margin-bottom: 0.035in !important;
+    font-size: 0.58rem !important;
+    line-height: 1.1 !important;
+  }
+
+  /* FOOTERS PRINT */
+
+  .house-2,
+  .house-20-footer,
+  .house-30-footer,
+  .house-40-footer,
+  .house-50-footer,
+  .house-60-footer,
+  .house-70-footer,
+.house-80-footer,
+.house-90-footer,
+.house-100-footer {
+    min-height: 0.62in !important;
+    height: 0.62in !important;
+  }
+
+  .house-2-table,
+  .house-20-table,
+  .house-30-table,
+  .house-40-table,
+  .house-50-table,
+  .house-60-table,
+  .house-70-table,
+.house-80-table,
+.house-90-table,
+.house-100-table {
+    font-size: 0.7rem !important;
+  }
+
+  .description-cell {
+    padding-left: 8px !important;
+    text-align: left !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* =========================
+   TOP-RIGHT HOME TAB
+========================= */
+/* Home Page button */
+.top-page-nav {
+  position: fixed;
+  top: 60px;      /* moves Home Page below PRINT / PDF */
+  right: 12px;
+  z-index: 5000;
+}
+
+
+.home-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.5rem;
+  min-height: 2.5rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid #4b4b4b;
+  border-radius: 0.45rem;
+  background: #ffffff;
+  color: #000000;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.18);
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.home-tab:hover,
+.home-tab:focus-visible {
+  background: #4b4b4b;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.25);
+}
+
+.home-tab:focus-visible {
+  outline: 3px solid #8ec5ff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .top-page-nav {
+    top: 0.6rem;
+    right: 0.6rem;
+  }
+
+  .home-tab {
+    min-width: 4.8rem;
+    min-height: 2.2rem;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.76rem;
+  }
+}
+
+@media print {
+  .top-page-nav {
+    display: none !important;
+  }
+}
